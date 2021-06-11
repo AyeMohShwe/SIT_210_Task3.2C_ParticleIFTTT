@@ -9,13 +9,13 @@ void loop()
 {
     analogValue = analogRead(data);
     String intensity = String(analogValue);
-    if(analogValue > 10)
+    if(analogValue > 50)
     {
-        Particle.publish("Ambient_Light", "Stops", PRIVATE);
+        Particle.publish("Ambient_Light", "Hits", PRIVATE);
     }
     else
     {
-        Particle.publish("Ambient_Light", "Hits", PRIVATE);
+        Particle.publish("Ambient_Light", "Stops", PRIVATE);
     }
     delay(3000);
 }
